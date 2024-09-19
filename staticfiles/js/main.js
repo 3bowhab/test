@@ -1,42 +1,42 @@
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+    navToggle = document.getElementById('nav-toggle'),
+    navClose = document.getElementById('nav-close')
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
-if(navToggle){
-    navToggle.addEventListener('click', () =>{
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu')
     })
 }
 
 /*===== MENU HIDDEN =====*/
 /* Validate if constant exists */
-if(navClose){
-    navClose.addEventListener('click', () =>{
+if (navClose) {
+    navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu')
     })
 }
 /*=============== REMOVE MENU MOBILE ===============*/
 const navLink = document.querySelectorAll('.nav__link')
 
-const linkAction = () =>{
+const linkAction = () => {
     const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
+        // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
-const blurHeader = () =>{
+const blurHeader = () => {
     const header = document.getElementById('header')
-    // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
-    this.scrollY >= 50 ? header.classList.add('blur-header') 
-                       : header.classList.remove('blur-header')
+        // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
+    this.scrollY >= 50 ? header.classList.add('blur-header') :
+        header.classList.remove('blur-header')
 }
 window.addEventListener('scroll', blurHeader)
-/*=============== DARK LIGHT THEME ===============*/ 
+    /*=============== DARK LIGHT THEME ===============*/
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
 const iconTheme = 'ri-sun-fill'
@@ -51,9 +51,9 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moo
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'ri-moon-fill' ? 'add' : 'remove'](iconTheme)
+    // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+    themeButton.classList[selectedIcon === 'ri-moon-fill' ? 'add' : 'remove'](iconTheme)
 }
 
 // Activate / deactivate the theme manually with the button
@@ -61,7 +61,7 @@ themeButton.addEventListener('click', () => {
     // Add or remove the dark / icon theme
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
-    // We save the theme and the current icon that the user chose
+        // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
@@ -81,7 +81,7 @@ function animateCounters() {
         let startValue = 0;
         let endValue = parseInt(valueDisplay.getAttribute("data-val"));
         let duration = Math.floor(interval / endValue);
-        let counter = setInterval(function () {
+        let counter = setInterval(function() {
             startValue += 1;
             valueDisplay.textContent = startValue + "K";
             if (startValue == endValue) {
@@ -99,7 +99,7 @@ function resetCounters() {
 }
 
 // Check for scrolling direction
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", function() {
     if (window.scrollY > 0 && !isScrollingDown) {
         // Scrolling down, stop animations and reset values
         resetCounters();
@@ -117,7 +117,7 @@ animateCounters();
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     var TrandingSlider = new Swiper('.tranding-slider', {
         effect: 'coverflow',
         grabCursor: true,
@@ -142,31 +142,31 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-    
+
 /*=============== HOME SWIPER ===============*/
 let swiperProjects = new Swiper(".projects__container", {
     loop: true,
     spaceBetween: 24,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-   },
-   pagination:{
-    el:".swiper-pagination",
-   },
-   breakpoints:{
-    1200:{
-      slidesPerView:2,
-      spaceBetween:-56,
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
-   },
-  });
-/*=============== SHOW SCROLL UP ===============*/ 
-const scrollUp = () =>{
-	const scrollUp = document.getElementById('scroll-up')
-    // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
-	this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-						: scrollUp.classList.remove('show-scroll')
+    pagination: {
+        el: ".swiper-pagination",
+    },
+    breakpoints: {
+        1200: {
+            slidesPerView: 2,
+            spaceBetween: -56,
+        },
+    },
+});
+/*=============== SHOW SCROLL UP ===============*/
+const scrollUp = () => {
+    const scrollUp = document.getElementById('scroll-up')
+        // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
+    this.scrollY >= 350 ? scrollUp.classList.add('show-scroll') :
+        scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
     // var swiper = new Swiper('.swiper-container', {
@@ -183,41 +183,41 @@ window.addEventListener('scroll', scrollUp)
     //     },
     //     pagination: {
     //       el: '.swiper-pagination',
-          
-    //     },
-    //     });
+
+//     },
+//     });
 /*=============== ACCORDION ===============*/
 const accordionItems = document.querySelectorAll('.accordion__item')
 
 // 1. Selecionar cada item
-accordionItems.forEach((item) =>{
+accordionItems.forEach((item) => {
     const accordionHeader = item.querySelector('.accordion__header')
 
     // 2. Seleccionar cada click del header
-    accordionHeader.addEventListener('click', () =>{
+    accordionHeader.addEventListener('click', () => {
         // 7. Crear la variable
         const openItem = document.querySelector('.accordion-open')
-        
+
         // 5. Llamar a la funcion toggle item
         toggleItem(item)
 
         // 8. Validar si existe la clase
-        if(openItem && openItem!== item){
+        if (openItem && openItem !== item) {
             toggleItem(openItem)
         }
     })
 })
 
 // 3. Crear una funcion tipo constante
-const toggleItem = (item) =>{
+const toggleItem = (item) => {
     // 3.1 Crear la variable
     const accordionContent = item.querySelector('.accordion__content')
 
     // 6. Si existe otro elemento que contenga la clase accorion-open que remueva su clase
-    if(item.classList.contains('accordion-open')){
+    if (item.classList.contains('accordion-open')) {
         accordionContent.removeAttribute('style')
         item.classList.remove('accordion-open')
-    }else{
+    } else {
         // 4. Agregar el height maximo del content
         accordionContent.style.height = accordionContent.scrollHeight + 'px'
         item.classList.add('accordion-open')
@@ -230,22 +230,22 @@ let swiperTestimonial = new Swiper('.testimonial__container', {
     spaceBetween: 24,
     grabCursor: true,
     pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+        el: ".swiper-pagination",
+        clickable: true,
     },
     autoplay: {
-      delay: 3000, // تحديد مدة زمنية بالميللي ثانية، هنا تم تحديدها لتكون 4 ثواني
+        delay: 3000, // تحديد مدة زمنية بالميللي ثانية، هنا تم تحديدها لتكون 4 ثواني
     },
     breakpoints: {
-      576: {
-        slidesPerView: 2,
-      },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 48,
-      },
+        576: {
+            slidesPerView: 2,
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 48,
+        },
     },
-  });
+});
 
 
 
@@ -253,7 +253,7 @@ let swiperTestimonial = new Swiper('.testimonial__container', {
 
 
 
-  
+
 /*=============== Calc ===============*/
 
 
@@ -330,7 +330,7 @@ let swiperTestimonial = new Swiper('.testimonial__container', {
 //     weight.classList.remove("invalid");
 //   }
 // });
-/*=============== SHOW SCROLL UP ===============*/ 
+/*=============== SHOW SCROLL UP ===============*/
 
 
 // // //////////////////   22
@@ -348,64 +348,61 @@ let swiperTestimonial = new Swiper('.testimonial__container', {
 //       text: "A tutaj jeszcze jeden! mo alramaly and fgdjknk"
 //     }
 //   ];
-  
+
 //   let $image = null;
 //   let $text = null;
-  
+
 //   const ONE_SECOND = 1000; 
 //   const TIME_INTERVAL = 3 * ONE_SECOND;
-  
+
 //   function displayTestimonial(testimonialIndex) {
 //     let testimonial = testimonialList[testimonialIndex];
 //     $image.setAttribute('src', testimonial.image);
 //     $text.textContent = testimonial.text;
 //   }
-  
+
 //   function rotateTestimonial(index) {
 //     displayTestimonial(index);
-    
+
 //     setInterval(() => {
 //       index++;
-      
+
 //       if (index === testimonialList.length) {
 //         index = 0;
 //       }
-      
+
 //       displayTestimonial(index);
 //     }, TIME_INTERVAL);
 //   }
-  
+
 //   function setup() {
 //     $image = document.querySelector('.testimonial__image');
 //     $text = document.querySelector('.testimonial__text');
-    
+
 //     rotateTestimonial(0);
 //   }
-  
+
 //   window.addEventListener('DOMContentLoaded', setup);
 /*=============== EMAIL JS ===============*/
 
-    // const contactForm = document.getElementById('contact-form');
-    //  contactMessage = document.getElementById('contact-message');
-
-    // const sendEmail = (e) => {
-    //     e.preventDefault()
-    //     emailjs.sendForm('service_2qmo3nm', 'template_74nnfqc', '#contact-form', 'yg9RrGdQ5Bpb2nGVr')
-    //     .then(() => {
-    //         contactMessage.textContent = 'Message sent successfully';
-
-    //         setTimeout(() => {
-    //             contactMessage.textContent = '';
-    //         }, 500);
-
-    //         contactForm.reset()
-    //     }, () =>{
-    //         contactMessage.textContent = 'Message failed to send (error)';
-    //     });
-    // };
-
-    // contactForm.addEventListener('submit', sendEmail);
+const contactForm = document.getElementById('contact-form');
+const contactMessage = document.getElementById('contact-message');
 
 
+const sendEmail = (e) => {
+    e.preventDefault()
+    emailjs.sendForm('service_r4pzfdm', 'template_by27eqq', '#contact-form', 'KWf-F2DJ0ZymYu54a')
+        .then(() => {
+            contactMessage.textContent = 'Message sent successfully';
 
+            setTimeout(() => {
+                contactMessage.textContent = '';
+            }, 1500);
 
+            contactForm.reset()
+        }, () => {
+            contactMessage.textContent = 'Message failed to send (error)';
+        });
+};
+
+contactForm.addEventListener('submit', sendEmail);
