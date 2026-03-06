@@ -6,13 +6,12 @@ from accounts import views
 
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('about/', views.about, name='about'),
-    path('pricing/', views.pricing, name='pricing'),
-    path('calc/', views.calc, name='calc'),
-    path('create-checkout-session/', views.create_checkout_session, name='create_checkout_session'),
-    path('success/', views.success, name='success'),
-    path('cancel/', views.cancel, name='cancel'),
-    path('second/', views.second, name='second'),
     path('admin/', admin.site.urls),
+    path('', views.index, name='index'),
+    path('main/', views.main, name='main'),
+    path('breakfast/', views.breakfast, name='breakfast'),
+    path('salads/', views.salads, name='salads'),
+    path('menu/', views.menu, name='menu'),
+    path('checkout/', views.checkout, name='checkout'),
+    path('order_success/', views.order_success, name='order_success'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
